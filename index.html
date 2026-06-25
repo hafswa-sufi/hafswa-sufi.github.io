@@ -315,6 +315,62 @@
       font-weight: 650;
     }
 
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .skill-cloud span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: #c9d1d9;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      transition: transform 180ms ease, border-color 180ms ease, color 180ms ease, background 180ms ease;
+    }
+
+    .skill-cloud span:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-inner,
+      .section {
+        animation: fade-up 700ms ease both;
+      }
+
+      .card,
+      .chip,
+      .timeline,
+      .contact-panel {
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .card:hover,
+      .chip:hover,
+      .timeline:hover,
+      .contact-panel:hover {
+        transform: translateY(-3px);
+        border-color: rgba(56, 189, 248, 0.45);
+        background: #18202a;
+      }
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     ::selection {
       background: var(--accent);
       color: var(--bg);
@@ -355,6 +411,7 @@
         <a href="#leadership">Leadership</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -438,9 +495,8 @@
           <article class="card">
             <span class="stack">React / TypeScript / Firebase Auth / Firestore / Cloud Functions</span>
             <h3>WasteWise: Household Food-Waste Management Platform</h3>
-            <p>Built a Kenya-focused household workflow for managing pantry items, estimating freshness from shelf-life rules, receiving expiry alerts, recording consumption, and requesting donation or disposal. The current freshness estimator is deterministic: it calculates expiry from item type, storage type, and purchase date rather than using machine learning.</p>
-            <p><em>Implementation work:</em> Connect NGO, recycling, and admin dashboards to real household actions; harden Firebase rules; and deploy scheduled email functions.</p>
-            <p><em>Future work:</em> Add computer vision for freshness detection once the baseline household-to-partner workflow is stable.</p>
+            <p>Built a Kenya-focused household workflow for managing pantry items, estimating freshness from shelf-life rules, receiving expiry alerts, recording consumption, and requesting donation or disposal. The current estimator is deterministic: it calculates expiry from item type, storage type, and purchase date, while implementation work is connecting NGO, recycling, and admin dashboards to real household actions, hardening Firebase rules, and deploying scheduled email functions.</p>
+            <p><em>Future work:</em> Add a computer vision freshness-detection layer that can assess produce from images and compare visual signals against the existing shelf-life baseline.</p>
             <p><a class="medium-link" href="https://github.com/hafswa-sufi/Waste-Wise" target="_blank" rel="noreferrer">Source repository</a></p>
           </article>
 
@@ -459,8 +515,33 @@
       </div>
     </section>
 
-    <section class="section" id="experience">
+    <section class="section" id="skills">
       <div class="section-index">05</div>
+      <div class="section-body">
+        <h2>Technical Fluency</h2>
+        <p class="lead">Languages, frameworks, and tools I have used across coursework, research prototypes, and student-led software projects.</p>
+        <div class="skill-cloud" aria-label="Technical skills">
+          <span>React</span>
+          <span>TypeScript</span>
+          <span>JavaScript</span>
+          <span>Next.js</span>
+          <span>Python</span>
+          <span>C++</span>
+          <span>Java</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>PHP</span>
+          <span>Laravel</span>
+          <span>Livewire</span>
+          <span>Firebase</span>
+          <span>MySQL</span>
+          <span>Git/GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-index">06</div>
       <div class="section-body">
         <h2>Experience History</h2>
         <div class="timeline">
@@ -492,7 +573,7 @@
     </section>
 
     <section class="section" id="contact">
-      <div class="section-index">06</div>
+      <div class="section-index">07</div>
       <div class="section-body">
         <h2>Contact</h2>
         <div class="contact-panel">
